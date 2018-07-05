@@ -1,0 +1,6 @@
+use_frameworks!
+target 'RTMVVM_Tests' do
+  pod 'RTMVVM', :path => '../'
+  
+  
+end
