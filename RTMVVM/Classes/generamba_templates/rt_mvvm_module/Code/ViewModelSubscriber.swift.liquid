@@ -1,11 +1,12 @@
 {% include 'header' %}
 
 import Foundation
+import RTMVVM
 
 extension {{ module_info.name }} {
     class {{ custom_parameters.entity }}ViewModelSubscriber {
         private let engine: ViewModelSubscriberEngine<{{ module_info.name }}.{{ custom_parameters.entity }}ViewModel>
-        private var factory: {{ module_info.name }}.{{ custom_parameters.entity }}ViewModelFactory
+        private let factory: {{ module_info.name }}.{{ custom_parameters.entity }}ViewModelFactory
         
         init(factory: {{ module_info.name }}.{{ custom_parameters.entity }}ViewModelFactory) {
             self.factory = factory

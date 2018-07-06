@@ -29,4 +29,7 @@ This library contains generamba template for module generation and contains some
   s.ios.deployment_target = '10.3'
 
   s.source_files = 'RTMVVM/Classes/**/*'
+  s.dependency 'Dip', '~> 6.0'
+  s.dependency 'Dip-UI', '~> 2.0'
+  s.dependency 'RealmSwift', '~> 3.6.0'
 end
