@@ -1,0 +1,16 @@
+PODS:
+  - RTMVVM (0.1.0)
+
+DEPENDENCIES:
+  - RTMVVM (from `../`)
+
+EXTERNAL SOURCES:
+  RTMVVM:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  RTMVVM: 5abf3d9b440dadc34d4a86788b0c4cf3ddfae44c
+
+PODFILE CHECKSUM: e96cb9fceeda0a479f0f06c98952d173b637eb6e
+
+COCOAPODS: 1.5.3

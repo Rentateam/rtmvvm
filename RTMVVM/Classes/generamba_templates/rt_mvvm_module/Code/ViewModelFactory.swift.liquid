@@ -1,0 +1,24 @@
+{% include 'header' %}
+
+extension {{ module_info.name }} {
+    class {{ custom_parameters.entity }}ViewModelFactory {
+        private let databaseService: DatabaseProviderProtocol
+        private let bgQueue: DispatchQueue
+        
+        init(bgQueue: DispatchQueue,
+             databaseService: DatabaseProviderProtocol) {
+            self.bgQueue = bgQueue
+            self.databaseService = databaseService
+        }
+        
+        func rebuild{{ custom_parameters.entity }}ViewModel(model: {{ module_info.name }}.{{ custom_parameters.entity }}ViewModel) {
+            self.bgQueue.async {
+                let realm = self.databaseService.getRealm()
+                //...calculate updated values...
+                DispatchQueue.main.async {
+                    //...assign updated values to modelr...
+                }
+            }
+        }
+    }
+}

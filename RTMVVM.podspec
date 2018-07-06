@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'RTMVVM'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of RTMVVM.'
+  s.summary          = 'Library for MVVM implementation.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,25 +18,15 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+This library contains generamba template for module generation and contains some boilerplate classes for subscriber implementation.
                        DESC
 
-  s.homepage         = 'https://github.com/a-25/RTMVVM'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://bitbucket.org/rentateam/rtmvvm'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'a-25' => 'anuryadov@gmail.com' }
-  s.source           = { :git => 'https://github.com/a-25/RTMVVM.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'RentaTeam' => 'info@rentateam.ru' }
+  s.source           = { :git => 'https://bitbucket.org/rentateam/rtmvvm.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.3'
 
   s.source_files = 'RTMVVM/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'RTMVVM' => ['RTMVVM/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

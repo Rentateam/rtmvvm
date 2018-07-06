@@ -22,8 +22,14 @@ pod 'RTMVVM'
 
 ## Author
 
-a-25, anuryadov@gmail.com
+RentaTeam, info@rentateam.ru
 
 ## License
 
 RTMVVM is available under the MIT license. See the LICENSE file for more info.
+
+
+## How to use
+
+- Use swift files as boilerplate for view model subscribers
+- Install [Generamba](https://github.com/rambler-digital-solutions/Generamba) and generate modules by  generate_module.sh script
