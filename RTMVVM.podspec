@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RTMVVM'
-  s.version          = '0.1.1'
-  s.summary          = 'Library for MVVM implementation.'
+  s.version          = '0.1.2'
+  s.summary          = 'Library for RentaTeam internal MVVM implementation.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
