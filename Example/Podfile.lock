@@ -1,15 +1,37 @@
 PODS:
-  - RTMVVM (0.1.0)
+  - Dip (6.1)
+  - Dip-UI (2.0):
+    - Dip (~> 6.0)
+  - Realm (3.6.0):
+    - Realm/Headers (= 3.6.0)
+  - Realm/Headers (3.6.0)
+  - RealmSwift (3.6.0):
+    - Realm (= 3.6.0)
+  - RTMVVM (0.1.1):
+    - Dip (~> 6.0)
+    - Dip-UI (~> 2.0)
+    - RealmSwift (~> 3.6.0)
 
 DEPENDENCIES:
   - RTMVVM (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Dip
+    - Dip-UI
+    - Realm
+    - RealmSwift
 
 EXTERNAL SOURCES:
   RTMVVM:
     :path: "../"
 
 SPEC CHECKSUMS:
-  RTMVVM: 5abf3d9b440dadc34d4a86788b0c4cf3ddfae44c
+  Dip: e6af9f4e7644e1a142995c1ab0bffa61351a849d
+  Dip-UI: 80616044fdf76a86f6504d33d5f0b20c82df71e3
+  Realm: 08b464b462d4f31bbd4ba5f5a1c8722ef0a700b7
+  RealmSwift: 973e1499c44ab571f894c2c908e2db450be280c3
+  RTMVVM: 3f83c02d80ae307f8dcfa550f318c127f7b42482
 
 PODFILE CHECKSUM: e96cb9fceeda0a479f0f06c98952d173b637eb6e
 

@@ -2,20 +2,20 @@
 
 import Foundation
 
-class ViewModelWeakList<T: AnyObject> {
+public class ViewModelWeakList<T: AnyObject> {
     private var modelList: NSHashTable<T>
     
-    init() {
+    public init() {
         self.modelList = NSHashTable<T>.weakObjects()
     }
     
-    func addViewModel(model: T) {
+    public func addViewModel(model: T) {
         if !self.modelList.contains(model) {
             self.modelList.add(model)
         }
     }
     
-    func getList() -> [T] {
+    public func getList() -> [T] {
         return self.modelList.allObjects
     }
 }

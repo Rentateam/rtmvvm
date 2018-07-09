@@ -3,6 +3,6 @@
 import Foundation
 import RealmSwift
 
-protocol DatabaseProviderProtocol {
+public protocol DatabaseProviderProtocol {
     func getRealm() -> Realm
 }
