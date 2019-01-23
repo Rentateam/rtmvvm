@@ -1,6 +1,6 @@
 use_frameworks!
-target 'RTMVVM_Tests' do
+target 'RTMVVM-Example' do
   pod 'RTMVVM', :path => '../'
-  
+  pod 'KVOController', '1.2.0'
   
 end

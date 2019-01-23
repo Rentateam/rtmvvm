@@ -1,0 +1,20 @@
+{% include 'header' %}
+import RTMVVM
+import RealmSwift
+
+extension {{ module_info.name }} {
+    class {{ custom_parameters.entity }}ViewModelSingleFactory: ViewModelSingleFactoryProtocol {
+        typealias ViewModel = {{ custom_parameters.entity }}ViewModel
+        typealias RealmObject = {{ custom_parameters.entity }}Object
+
+        func getRealmObject(realm: Realm) -> RealmObject? {
+            #warning("Add code here")
+            return realm.objects(RealmObject.self).first
+        }
+
+        func createViewModelSingle(item: RealmObject) -> ViewModel {
+            #warning("Add code here")
+            return ViewModel()
+        }
+    }
+}

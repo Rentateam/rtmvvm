@@ -1,0 +1,16 @@
+{% include 'header' %}
+
+import Foundation
+import Dip
+import RTMVVM
+
+class {{ custom_parameters.entity }}ControllerAssembly: AssemblyProtocol {
+    func configure(container: DependencyContainer) {
+        container.register(storyboardType: {{ custom_parameters.entity }}Controller.self)
+            .resolvingProperties { _, controller in
+                controller.presenter = {{ module_info.name }}.{{ custom_parameters.entity }}Presenter(viewModelSubscriber: try container.resolve(),
+                              repository: try container.resolve(VMRepositorySingleProtocol.self,
+                                                  tag:"{{ module_info.name }}.{{ custom_parameters.entity }}VMRepositorySingle") as! {{ module_info.name }}.{{ custom_parameters.entity }}VMRepositorySingle)
+        }
+    }
+}

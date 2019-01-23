@@ -1,0 +1,25 @@
+# Template information section
+name: rt_mvvm_module
+summary: Standard View Model Factory
+author: RentaTeam
+version: 1.0.0
+license: MIT
+
+# The declarations for code files
+code_files:
+- {name: ViewModelListFactory.swift, path: Code/ViewModelListFactory.swift.liquid}
+- {name: ViewModel.swift, path: Code/ViewModel.swift.liquid}
+- {name: Presenter.swift, path: Code/Presenter.swift.liquid}
+- {name: Controller.swift, path: Code/Controller.swift.liquid}
+- {name: Assembly.swift, path: Code/Assembly.swift.liquid}
+- {name: ControllerAssembly.swift, path: Code/ControllerAssembly.swift.liquid}
+- {name: Object.swift, path: Code/Object.swift.liquid}
+- {name: VMRepositoryList.swift, path: Code/VMRepositoryList.swift.liquid}
+
+# The declarations for test files
+#test_files:
+#- {name: Service/ServiceTests.m, path: Tests/Service/service_tests.m.liquid}
+
+# Template dependencies
+#dependencies:
+

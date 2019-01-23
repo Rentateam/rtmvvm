@@ -1,0 +1,21 @@
+{% include 'header' %}
+
+import Foundation
+import Dip
+import RTMVVM
+
+class {{ custom_parameters.entity }}Assembly: AssemblyProtocol {
+    func configure(container: DependencyContainer) {
+        container
+            .register { {{ module_info.name }}.{{ custom_parameters.entity }}ViewModelListFactory()}
+        container
+            .register(tag: "{{ module_info.name }}.{{ custom_parameters.entity }}VMRepositoryList") { {{ module_info.name }}.{{ custom_parameters.entity }}VMRepositoryList() as VMRepositoryListProtocol }
+        #warning("Check the shouldBindToDatabase parameter")
+        container
+            .register { VMRepositoryListSubscriber<{{ module_info.name }}.{{ custom_parameters.entity }}ViewModelListFactory>(factory: try container.resolve(),
+                                      repository: try container.resolve(tag: "{{ module_info.name }}.{{ custom_parameters.entity }}VMRepositoryList"),
+                                      databaseService: try container.resolve(tag: AssemblyTag.databaseService),
+                                      bgQueue: try container.resolve(tag: AssemblyTag.backgroundQueue),
+                                      shouldBindToDatabase: true)}
+    }
+}
