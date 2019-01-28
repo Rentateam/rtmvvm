@@ -1,4 +1,6 @@
 use_frameworks!
+install! 'cocoapods', :deterministic_uuids => false
+
 target 'RTMVVM-Example' do
   pod 'RTMVVM', :path => '../'
   pod 'KVOController', '1.2.0'

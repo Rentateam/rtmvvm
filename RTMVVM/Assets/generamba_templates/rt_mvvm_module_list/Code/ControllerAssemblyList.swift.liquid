@@ -1,4 +1,4 @@
-{% include 'header' %}
+{% include 'headerList' %}
 
 import Foundation
 import Dip
@@ -9,8 +9,8 @@ class {{ custom_parameters.entity }}ControllerAssembly: AssemblyProtocol {
         container.register(storyboardType: {{ custom_parameters.entity }}Controller.self)
             .resolvingProperties { _, controller in
                 controller.presenter = {{ module_info.name }}.{{ custom_parameters.entity }}Presenter(viewModelSubscriber: try container.resolve(),
-                              repository: try container.resolve(VMRepositorySingleProtocol.self,
-                                                  tag:"{{ module_info.name }}.{{ custom_parameters.entity }}VMRepositorySingle") as! {{ module_info.name }}.{{ custom_parameters.entity }}VMRepositorySingle)
+                              repository: try container.resolve(VMRepositoryListProtocol.self,
+                                                                tag:"{{ module_info.name }}.{{ custom_parameters.entity }}VMRepositoryList") as! {{ module_info.name }}.{{ custom_parameters.entity }}VMRepositoryList)
         }
     }
 }

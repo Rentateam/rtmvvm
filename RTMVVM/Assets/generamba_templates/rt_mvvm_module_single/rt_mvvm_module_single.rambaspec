@@ -7,13 +7,13 @@ license: MIT
 
 # The declarations for code files
 code_files:
-- {name: ViewModelSingleFactory.swift, path: Code/ViewModelSingleFactory.swift.liquid}
-- {name: ViewModel.swift, path: Code/ViewModel.swift.liquid}
-- {name: Presenter.swift, path: Code/Presenter.swift.liquid}
-- {name: Controller.swift, path: Code/Controller.swift.liquid}
-- {name: Assembly.swift, path: Code/Assembly.swift.liquid}
-- {name: ControllerAssembly.swift, path: Code/ControllerAssembly.swift.liquid}
-- {name: Object.swift, path: Code/Object.swift.liquid}
+- {name: ViewModelSingleFactory.swift, path: Code/ViewModelSingleFactorySingle.swift.liquid}
+- {name: ViewModel.swift, path: Code/ViewModelSingle.swift.liquid}
+- {name: Presenter.swift, path: Code/PresenterSingle.swift.liquid}
+- {name: Controller.swift, path: Code/ControllerSingle.swift.liquid}
+- {name: Assembly.swift, path: Code/AssemblySingle.swift.liquid}
+- {name: ControllerAssembly.swift, path: Code/ControllerAssemblySingle.swift.liquid}
+- {name: Object.swift, path: Code/ObjectSingle.swift.liquid}
 - {name: VMRepositorySingle.swift, path: Code/VMRepositorySingle.swift.liquid}
 
 # The declarations for test files
