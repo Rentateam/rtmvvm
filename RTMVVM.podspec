@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RTMVVM'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = 'Library for RentaTeam internal MVVM implementation.'
 
 # This description is used to generate tags and improve search results.
@@ -30,7 +30,6 @@ This library contains generamba template for module generation and contains some
   s.swift_version = '4.2'
 
   s.source_files = 'RTMVVM/Classes/**/*'
-  s.resources = 'RTMVVM/Assets/**/*'
   s.dependency 'Dip', '~> 7.0.1'
   s.dependency 'RealmSwift', '~> 3.13.1'
 end
