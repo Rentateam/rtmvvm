@@ -32,5 +32,5 @@ RTMVVM is available under the MIT license. See the LICENSE file for more info.
 ## How to use
 
 - Use swift files as boilerplate for view model subscribers
-- Optional. Install [Generamba](https://github.com/rambler-digital-solutions/Generamba), visit https://bitbucket.org/rentateam/rtmvvm-generamba-templates and generate modules by  
+- Optional. Install [Generamba](https://github.com/rambler-digital-solutions/Generamba), visit https://github.com/Rentateam/rtmvvm-generamba-templates and generate modules by  
 generate_module.sh script
