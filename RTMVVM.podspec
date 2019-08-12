@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RTMVVM'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
   s.summary          = 'Library for RentaTeam internal MVVM implementation.'
 
 # This description is used to generate tags and improve search results.
@@ -21,10 +21,10 @@ Pod::Spec.new do |s|
 This library contains generamba template for module generation and contains some boilerplate classes for subscriber implementation.
                        DESC
 
-  s.homepage         = 'https://bitbucket.org/rentateam/rtmvvm'
+  s.homepage         = 'https://github.com/rentateam-a-25/rtmvvm'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'RentaTeam' => 'info@rentateam.ru' }
-  s.source           = { :git => 'https://bitbucket.org/rentateam/rtmvvm.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/rentateam-a-25/rtmvvm.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.3'
   s.swift_version = '4.2'
