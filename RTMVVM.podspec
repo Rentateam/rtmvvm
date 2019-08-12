@@ -21,10 +21,10 @@ Pod::Spec.new do |s|
 This library contains generamba template for module generation and contains some boilerplate classes for subscriber implementation.
                        DESC
 
-  s.homepage         = 'https://github.com/rentateam-a-25/rtmvvm'
+  s.homepage         = 'https://github.com/Rentateam/rtmvvm'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'RentaTeam' => 'info@rentateam.ru' }
-  s.source           = { :git => 'https://github.com/rentateam-a-25/rtmvvm.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Rentateam/rtmvvm.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.3'
   s.swift_version = '4.2'
