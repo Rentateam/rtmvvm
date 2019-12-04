@@ -9,7 +9,6 @@
 import UIKit
 import RealmSwift
 import RTMVVM
-import KVOController
 
 class VMUserVMRepository: NSObject, VMRepositorySingleProtocol {
     func getEmbedViewModel() -> NSObjectProtocol? {
@@ -37,6 +36,11 @@ class UserEntityItemController: UIViewController {
 
     private var viewModelRepositorySubscriber: VMRepositorySingleSubscriber<UserViewModelFactory>!
     @objc var repository: VMUserVMRepository!
+    private var observationTokens = [NSKeyValueObservation]()
+    
+    deinit {
+        observationTokens.removeAll()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,10 +60,11 @@ class UserEntityItemController: UIViewController {
         self.repository = VMUserVMRepository()
         self.viewModelRepositorySubscriber = VMRepositorySingleSubscriber<UserViewModelFactory>(factory: factory, repository: self.repository, databaseService: DatabaseService(), bgQueue: DispatchQueue.global(), shouldBindToDatabase: true)
         
-        self.kvoController.observe(self.repository,
-                                   keyPath: #keyPath(VMUserVMRepository.viewModel),
-                                   options: [.new, .old, .initial],
-                                   action: #selector(self.onViewModelChanged))
+        let token = self.repository.observe(\VMUserVMRepository.viewModel,
+                                options: [.new, .old, .initial]) { [weak self] _, _ in
+                                    self?.onViewModelChanged()
+        }
+        observationTokens.append(token)
         
         DispatchQueue.global().async {
             let realm = try! Realm()
