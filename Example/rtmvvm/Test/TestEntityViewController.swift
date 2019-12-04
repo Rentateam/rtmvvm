@@ -9,7 +9,6 @@
 import UIKit
 import RealmSwift
 import RTMVVM
-import KVOController
 
 class VMTestVMRepositoryList: NSObject, VMRepositoryListProtocol {
     func getEmbedViewModel() -> [NSObjectProtocol]? {
@@ -34,6 +33,11 @@ class TestEntityViewController: UITableViewController {
     
     private var viewModelRepositorySubscriber: VMRepositoryListSubscriber<TestViewModelListFactory>!
     @objc var repository: VMTestVMRepositoryList!
+    private var observationTokens = [NSKeyValueObservation]()
+    
+    deinit {
+        observationTokens.removeAll()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +48,12 @@ class TestEntityViewController: UITableViewController {
         self.repository = VMTestVMRepositoryList()
         self.viewModelRepositorySubscriber = VMRepositoryListSubscriber<TestViewModelListFactory>(factory: factory, repository: self.repository, databaseService: DatabaseService(), bgQueue: DispatchQueue.global(), shouldBindToDatabase: true)
         
-        self.kvoController.observe(self.repository,
-                                   keyPath: #keyPath(VMTestVMRepositoryList.viewModel),
-                                   options: [.new, .old, .initial],
-                                   action: #selector(self.onViewModelChanged))
+        let token = self.repository.observe(\VMTestVMRepositoryList.viewModel,
+                                options: [.new, .old, .initial]) { [weak self] _, _ in
+                                    self?.onViewModelChanged()
+        }
+        observationTokens.append(token)
+        
         
         DispatchQueue.global().async {
             NSLog("Insert many objects")
